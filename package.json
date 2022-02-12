@@ -1,6 +1,6 @@
 {
     "name": "ergogen",
-    "version": "3.1.0",
+    "version": "4.0.0-develop",
     "description": "Ergonomic keyboard layout generator",
     "author": "Bán Dénes <mr@zealot.hu>",
     "license": "MIT",
@@ -21,7 +21,6 @@
         "kle-serial": "github:ergogen/kle-serial#ergogen",
         "makerjs": "github:ergogen/maker.js#ergogen",
         "mathjs": "^10.0.0",
-        "semver": "^7.3.5",
         "yargs": "^17.3.0"
     },
     "devDependencies": {

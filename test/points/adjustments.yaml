@@ -4,10 +4,16 @@ points:
       columns:
         left:
         right:
-          stagger: 5
-          spread: 25
-          rotate: 5
-          origin: [-9, -9]
+          key:
+            stagger: 5
+            spread: 25
+            splay: 5
+            origin: [-9, -9]
+          rows:
+            top:
+              orient: -90
+              shift: [0, 10]
+              rotate: 90
       rows:
         bottom:
         top:
