@@ -120,11 +120,11 @@ for (let w of cli_what) {
         this.timeout(120000)
         this.slow(120000)
         for (const t of glob.sync(path.join(__dirname, w))) {
-            it(path.basename(t).split('_').join(' '), function() {
+            it(cap(path.basename(t).split('_').join(' ')), function() {
                 const command = read(t, 'command')
                 const output_path = exists(t, 'path') ? read(t, 'path') : 'output'
                 fs.removeSync(output_path)
-                const version_regex = /\bv\d+\.\d+\.\d+(\-develop)?\b/
+                const version_regex = /\bv\d+\.\d+\.\d+\b/
                 // correct execution
                 if (exists(t, 'log')) {
                     const ref_log = read(t, 'log').replace(version_regex, '<version>')

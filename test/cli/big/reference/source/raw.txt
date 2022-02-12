@@ -1,21 +1,23 @@
 units:
   a: 28 + u
 points.zones.matrix:
-outlines:
+  columns.col: {}
+  rows.row: {}
+outlines.exports:
   export:
-    - what: rectangle
-      where: true
+    - type: 'keys'
+      side: 'left'
       size: 18
   _export:
-    - what: rectangle
-      where: true
+    - type: 'keys'
+      side: 'left'
       size: 18
 cases:
   export:
-    - name: export
+    - name: 'export'
       extrude: 1
   _export:
-    - name: export
+    - name: 'export'
       extrude: 1
 pcbs:
   export: {}

@@ -10,14 +10,15 @@ points:
       key:
         bind: [0, 0, 0, 0]
 outlines:
-  outline:
-    main:
-      what: rectangle
-      where: true
-      size: 20
-    min:
-      what: rectangle
-      where: true
-      bound: false
-      size: 14
-      operation: subtract
+  exports:
+    outline:
+      main:
+        type: keys
+        side: left
+        size: 20
+      min:
+        type: keys
+        side: left
+        bound: false
+        size: 14
+        operation: subtract

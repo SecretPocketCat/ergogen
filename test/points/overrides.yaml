@@ -1,15 +1,16 @@
-points.zones.matrix:
-  columns:
-    left:
-    middle:
+points:
+  zones:
+    matrix:
+      columns:
+        left:
+        middle:
+          rows:
+            top:
+        right:
+          stagger: u
+          row_overrides:
+            home:
+            top:
       rows:
-        top:
-    right:
-      key.stagger: u
-      rows:
-        bottom: $unset
+        bottom:
         home:
-        top:
-  rows:
-    bottom:
-    home:

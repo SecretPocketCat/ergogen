@@ -7,6 +7,7 @@ const outlines_lib = require('./outlines')
 const cases_lib = require('./cases')
 const pcbs_lib = require('./pcbs')
 
+const semver = require('semver')
 const version = require('../package.json').version
 
 const process = async (raw, debug=false, logger=()=>{}) => {
@@ -24,7 +25,6 @@ const process = async (raw, debug=false, logger=()=>{}) => {
     logger('Preprocessing input...')
     config = prepare.unnest(config)
     config = prepare.inherit(config)
-    config = prepare.parameterize(config)
     const results = {}
     if (debug) {
         results.raw = raw
@@ -33,9 +33,12 @@ const process = async (raw, debug=false, logger=()=>{}) => {
 
     if (config.meta && config.meta.engine) {
         logger('Checking compatibility...')
-        const engine = u.semver(config.meta.engine, 'config.meta.engine')
-        if (!u.satisfies(version, engine)) {
-            throw new Error(`Current ergogen version (${version}) doesn\'t satisfy config's engine requirement (${config.meta.engine})!`)
+        const engine = semver.validRange(config.meta.engine)
+        if (!engine) {
+            throw new Error('Invalid config engine declaration!')
+        }
+        if (!semver.satisfies(version, engine)) {
+            throw new Error(`Current ergogen version (${version}) doesn\'t satisfy config's engine requirement (${engine})!`)
         }
     }
 

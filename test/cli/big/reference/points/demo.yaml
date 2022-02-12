@@ -1,7 +1,7 @@
 models:
     export:
         models:
-            matrix:
+            matrix_col_row:
                 paths:
                     top:
                         type: line

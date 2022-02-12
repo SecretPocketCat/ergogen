@@ -1,9 +1,16 @@
-points.zones.matrix:
+points:
+  zones:
+    matrix:
+      columns:
+        one:
+      rows:
+        only:
 outlines:
-  edge:
-    - what: rectangle
-      where: true
-      size: u
+  exports:
+    edge:
+      - type: keys
+        side: left
+        size: [u, u]
 pcbs:
   main:
     outlines:
@@ -26,5 +33,5 @@ pcbs:
         type: anchor_test
         anchors:
           end:
-            ref: matrix
+            ref: matrix_one_only
             shift: [10, 10]

@@ -2,12 +2,13 @@ const u = require('./utils')
 const a = require('./assert')
 const Point = require('./point')
 
-const mirror_ref = exports.mirror = (ref, mirror=true) => {
+const mirror_ref = exports.mirror = (ref, mirror) => {
     if (mirror) {
         if (ref.startsWith('mirror_')) {
             return ref.substring(7)
+        } else {
+            return 'mirror_' + ref
         }
-        return 'mirror_' + ref
     }
     return ref
 }
