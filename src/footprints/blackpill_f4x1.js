@@ -41,9 +41,6 @@ module.exports = {
     B8: "B8",
     B9: "B9",
     GND: "GND",
-    A13_DIO: "A13_DIO",
-    A14_SCK: "A14_SCK",
-    GND: "GND",
   },
   params: {
     class: "custom",
@@ -238,19 +235,6 @@ module.exports = {
       (pad 20 thru_hole circle (at 0 48.26 ${
         p.rot
       }) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.net.P3V3.str})
-
-      (pad 44 thru_hole circle (at 3.812 44.449 ${
-        p.rot
-      }) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.net.P3V3.str})
-      (pad 43 thru_hole circle (at 6.352 44.449 ${
-        p.rot
-      }) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.net.A13_DIO.str})
-      (pad 42 thru_hole circle (at 8.892 44.449 ${
-        p.rot
-      }) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.net.A14_SCK.str})
-      (pad 41 thru_hole circle (at 11.432 44.449 ${
-        p.rot
-      }) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.net.GND.str})
     )`;
   },
 };
