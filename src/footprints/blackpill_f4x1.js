@@ -4,8 +4,9 @@
 // todo: silk - pins?
 module.exports = {
   nets: {
-    P5V: "P5V",
-    P3V3: "P3V3",
+    GND: "GND",
+    P5V1: "P5V1",
+    VDD24: "VDD24",
     B10: "B10",
     B2: "B2",
     B1: "B1",
@@ -40,7 +41,8 @@ module.exports = {
     B7: "B7",
     B8: "B8",
     B9: "B9",
-    GND: "GND",
+    P5V2: "P5V2",
+    VDD48: "VDD48",
   },
   params: {
     class: "MCU",
@@ -59,13 +61,13 @@ module.exports = {
     })
       (pad 40 thru_hole circle (at 15.24 0 ${
         p.rot
-      }) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.net.P5V.str})
+      }) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.net.P5V1.str})
       (pad 39 thru_hole circle (at 15.24 2.54 ${
         p.rot
       }) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.net.GND.str})
       (pad 38 thru_hole circle (at 15.24 5.08 ${
         p.rot
-      }) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.net.P3V3.str})
+      }) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.net.VDD24.str})
       (pad 37 thru_hole circle (at 15.24 7.62 ${
         p.rot
       }) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.net.B10.str})
@@ -171,13 +173,13 @@ module.exports = {
       }) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.net.B9.str})
       (pad 18 thru_hole circle (at 0 43.18 ${
         p.rot
-      }) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.net.P5V.str})
+      }) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.net.P5V2.str})
       (pad 19 thru_hole circle (at 0 45.72 ${
         p.rot
       }) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.net.GND.str})
       (pad 20 thru_hole circle (at 0 48.26 ${
         p.rot
-      }) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.net.P3V3.str})
+      }) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.net.VDD48.str})
     )`;
   },
 };
