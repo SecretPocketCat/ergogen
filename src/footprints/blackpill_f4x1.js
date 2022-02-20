@@ -82,8 +82,8 @@ module.exports = {
     function pins(def_neg, def_pos, silk_layer) {
       return `
         ${"" /* extra top left B12 pin outline */}
-        (fp_line (start ${def_pos}9.525 -0.5115) (end -9.525 ${def_pos}1.8415) (layer ${silk_layer}) (width 0.2))
-        (fp_line (start ${def_pos}9.525 -1.8415) (end -8.195 ${def_pos}1.8415) (layer ${silk_layer}) (width 0.2))
+        (fp_line (start ${def_pos}9.525 -0.5115) (end ${def_pos}9.525 -1.8415) (layer ${silk_layer}) (width 0.2))
+        (fp_line (start ${def_pos}9.525 -1.8415) (end ${def_pos}8.195 -1.8415) (layer ${silk_layer}) (width 0.2))
 
         ${"" /* actual pins */}
         (pad 40 thru_hole circle (at ${def_pos}7.62 0 ${
@@ -212,28 +212,14 @@ module.exports = {
 
     if (p.param.orientation == "down") {
       return `
-        ${standard("F.SilkS")}
-        ${pins("-", "", "F.SilkS")})
-        `;
-    } else {
-      return `
         ${standard("B.SilkS")}
         ${pins("", "-", "B.SilkS")})
         `;
+    } else {
+      return `
+        ${standard("F.SilkS")}
+        ${pins("-", "", "F.SilkS")})
+        `;
     }
-  },
-};
-
-module.exports = {
-  nets: {},
-  params: {
-    class: "MCU",
-  },
-  body: (p) => {
-    return `
-      (tags "module Black Pill")
-      (fp_text reference "${p.ref}" (at 7.62 -3.81 ${p.rot}) (layer ${silk_layer}) (effects (font (size 1 1) (thickness 0.15))) ${p.ref_hide})
-
-    )`;
   },
 };
